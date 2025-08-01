@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     let reuseIdentifierForSVC = "SecondViewController"
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func btnNextClick(_ sender: Any) {
@@ -26,10 +25,15 @@ class ViewController: UIViewController {
         let extractedLastName = lastNameTextField.text
         let extractedCity = cityTextField.text
         
-        secondViewController.nameContainer = extractedName
-        secondViewController.lastNameContainer = extractedLastName
-        secondViewController.cityContainer = extractedCity
+//        secondViewController.nameContainer = extractedName
+//        secondViewController.lastNameContainer = extractedLastName
+//        secondViewController.cityContainer = extractedCity
         
+        let person = Person(name: extractedName!,
+                            lastName: extractedLastName!,
+                            city: extractedCity!)
+        
+        secondViewController.personContainer = person
         self.navigationController?.pushViewController(secondViewController, animated: true)
     }
 }

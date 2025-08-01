@@ -13,20 +13,26 @@ class SecondViewController: UIViewController {
     @IBOutlet var lastNameLabel: UILabel!
     @IBOutlet var cityLabel: UILabel!
     
-    var nameContainer : String?
-    var lastNameContainer : String?
-    var cityContainer : String?
+//    var nameContainer : String?
+//    var lastNameContainer : String?
+//    var cityContainer : String?
+    
+    //creating container of person object
+    var personContainer : Person?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         bindData()
     }
     
     func bindData(){
-        self.nameLabel.text = nameContainer!
-        self.lastNameLabel.text = lastNameContainer!
-        self.cityLabel.text = cityContainer!
+//        self.nameLabel.text = nameContainer!
+//        self.lastNameLabel.text = lastNameContainer!
+//        self.cityLabel.text = cityContainer!
+        
+        self.nameLabel.text = personContainer?.name
+        self.lastNameLabel.text = personContainer?.lastName
+        self.cityLabel.text = personContainer?.city
     }
     
     @IBAction func btnBackClick(_ sender: Any) {
